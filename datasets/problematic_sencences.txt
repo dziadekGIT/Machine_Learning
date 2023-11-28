@@ -1,0 +1,10 @@
+{person_0} and {person_1} went to the park together.
+{person_2} had a great conversation with {person_3} about their favorite books.
+{person_4} and {person_5} shared a delicious meal at a local restaurant.
+{person_6} was excited to meet {person_7} at the concert.
+{person_8} and {person_9} decided to go for a hike in the mountains.
+{person_10} gave {person_11} a thoughtful birthday gift.
+{person_12} and {person_13} enjoyed a relaxing day at the beach.
+{person_14} and {person_15} took a road trip to visit {person_16}.
+{person_17} and {person_18} attended a workshop on art and creativity.
+{person_19} was surprised to see {person_20} at the local coffee shop.
