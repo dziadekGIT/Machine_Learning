@@ -111,6 +111,10 @@ def replace_persons(
 
 
 if __name__ == "__main__":
+    # my_dict = {"ala": "ala value"}
+    # my_dict = {}
+    # my_dict["ala"] = "ala value"
+
     lines = replace_persons(save=False)
     for l in lines:
         print(lines)

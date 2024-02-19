@@ -9,7 +9,7 @@ PATH = "../datasets/"
 
 
 def clean_brackets(
-    filename: str = "../datasets/txt_4_regex.txt", save: bool = False
+    filename: str = "../datasets/txt_4_regex.txt", save: bool = False, verbose=False
 ) -> list[str]:
     """
 
@@ -26,14 +26,33 @@ def clean_brackets(
     """
     f_txt = get_file_as_text(filename)
 
-    f_txt_clean = re.sub(r"\[[^\]]*\]|\([^\)]*\)", "", str(f_txt))
-    print(f_txt_clean)
+    # # simple style
+    # cleaned_lines = []
+    # for cur_line in f_txt:
+    #     cur_line_cleaned = re.sub(r"\[[^\]]*\]|\([^\)]*\)", "", cur_line)
+    #     cleaned_lines.append(cur_line_cleaned)
+
+    cleaned_lines = [re.sub(r"\[[^\]]*\]|\([^\)]*\)", "", l) for l in f_txt]
+
+    # #dynamic list creation example
+    # collection = [1, 2, 3, 4]
+    # created_list = [l + 5 for l in collection]
+    # print(created_list)
+
+    if verbose:
+        print(cleaned_lines)
 
     if save:
         with open("my_file_cleaned", "w", encoding="utf") as file:
-            file.write(f_txt_clean)
+            file.writelines(cleaned_lines)
             file.close()
+    return cleaned_lines
 
 
 if __name__ == "__main__":
-    clean_brackets(save=False)
+    ret_lines = clean_brackets(save=False)
+
+    if ret_lines is None:
+        print("something is wrong")
+    else:
+        print(ret_lines)
